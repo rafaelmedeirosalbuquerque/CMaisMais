@@ -1,0 +1,54 @@
+/* 
+[ITP] Adedooooooo...nha!
+
+Uma brincadeira muito popular entre crianças velhas é a adedonha: 
+as crianças colocam valores numéricos com os dedos para escolher uma das letras do alfabeto, 
+e então precisam responder palavras de uma categoria de informações escolhidas que começam com aquela letra.
+Por exemplo, se a categoria for Personagens de Naruto e a soma dos dedos colocados for 11, 
+então dará a letra K, e o pessoal vai começar a responder Kaguya, Kakashi, etc...
+Para ajudar os vários pais cansados de jogar adedonha, vocês vão fazer um programa que facilita pelo menos um dos trabalhos dos jogadores: 
+a contagem de dedos para saber qual é a letra.
+O seu programa receberá 4 valores inteiros, correspondendo a quantidade de dedos que foram colocados por cada um de quatro jogadores (sempre serão 4). 
+O valor desses dedos pode ser de 0 (não colocou nenhum) até 10. Seu programa então deve imprimir uma mensagem no seguinte formato:
+- "Ei! Ninguém colocou nada!" - caso o total de dedos colocado seja 0.
+- "Letra: @" - onde @ é a letra a ser impressa (A, B, C, D....Z, sempre maiúscula). 
+Essa impressão ocorre quando o total de dedos colocados for maior que zero.
+Atente para os casos de teste para ver a formatação da entrada e saída do programa!
+*/
+
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+#include <cstring>
+#include <cctype>
+
+using namespace std;
+
+int main(){
+    int dedo1;
+    int dedo2;
+    int dedo3;
+    int dedo4;
+    int SomaDosDedos;
+    char letra;
+    char letraZerou;
+    cin >> dedo1;
+    cin >> dedo2;
+    cin >> dedo3;
+    cin >> dedo4;
+   
+    SomaDosDedos = dedo1+dedo2+dedo3+dedo4;
+    letra = SomaDosDedos+64;
+    letraZerou = SomaDosDedos+64-26;
+    
+    if(dedo1<=10 && dedo2<=10 && dedo3 <=10 && dedo4 <=10 && SomaDosDedos != 0 && SomaDosDedos <= 26){
+        cout << "Letra: " << letra << endl;
+    }
+    else if(dedo1<=10 && dedo2<=10 && dedo3 <=10 && dedo4 <=10 && SomaDosDedos != 0 && SomaDosDedos >= 26){
+        cout << "Letra: " << letraZerou << endl;
+    }
+    else if(SomaDosDedos == 0){
+        cout << "Ei! Ninguém colocou nada!" << endl;
+    }
+    return 0;
+}
