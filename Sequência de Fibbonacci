@@ -1,0 +1,11 @@
+/*
+Sequência de Fibbonacci
+Implemente um programa que recebe um número inteiro positivo N e 
+escreve na saída todos os termos da sequência de fibonacci que são estritamente menores do que N, separados por espaço. 
+A sequência de Fibonacci tem seus dois primeiros termos iguais a 1. 
+A partir do terceiro, cada termo é igual a soma dos dois termos anteriores a ele. 
+Ou seja: o quinto termo é igual a soma do quarto e terceiro termos. 
+Os 10 primeiros termos da sequência de Fibonacci são: 1 1 2 3 5 8 13 21 34 55
+Nota: O espaço no final da saída é opcional.
+*/
+
