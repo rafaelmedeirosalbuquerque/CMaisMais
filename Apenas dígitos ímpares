@@ -1,0 +1,38 @@
+/* 
+Apenas dígitos ímpares
+Implemente um programa que receba um número inteiro positivo x. O programa deve imprimir uma mensagem informando se x é formado apenas por dígitos ímpares ou não.
+*/
+
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+#include <cstring>
+#include <cctype>
+#include <stdio.h>
+
+using namespace std;
+int main()
+{
+    int x,			    //valor de entrada do usuario
+    contador=0; 	    //utilizado para armazenar quantas vezes o numero divisível por 2 é par
+ 
+    cin >> x;           //entrada do valor de x
+    
+    while (x>0){        //estrutura de repetição, irá repetir até que x enquanto x for maior que 0
+       if (x%2 == 0){   //condição de incremento para o contador
+       contador++;      //sempre que o resto da divisão for 0 soma-se +1 no contador
+       }                //fim do da condição if
+    x=x/10;             //separação de dígito dentro do while, o dígito mais a direito será guardado no loop
+    }
+    
+
+    if(contador >= 1){ //se o contador de n tiver tido resto da divisão igual a 0 o número tem um ou mais dígitos pares
+	cout << "O numero nao e formado apenas por digitos impares" << endl;
+}
+    else{               //caso contrario terá apenas números ímpares
+	cout << "O numero e formado apenas por digitos impares" << endl;
+}
+
+    return 0;
+}
+ 
