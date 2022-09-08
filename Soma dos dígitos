@@ -1,0 +1,35 @@
+/*
+Soma dos dígitos
+Escreva um programa que lê um número inteiro n e imprime a soma dos dígitos desse número.
+*/
+
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+#include <cstring>
+#include <cctype>
+
+using namespace std;
+
+int main(){
+    
+    int N, /* inteiro positivo dado (a ser lido) */ 
+        soma, /* soma dos dígitos de N */
+        digito; /* para armazenar cada digito de N */
+  
+    soma = 0; /* Inicializacao da soma */
+
+// cout << "Entre com um valor"       
+    cin >> N;
+ 
+    while (N > 0){
+        digito =  N % 10; /* o digito mais à direita de N é obtido */
+        soma = soma + digito;
+        N = N / 10;  /* N passa a ser o N anterior sem o dígito mais à direita */
+  }
+  
+    cout << soma << endl;
+    return 0;
+}
+
+
