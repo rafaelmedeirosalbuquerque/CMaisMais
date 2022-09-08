@@ -1,0 +1,33 @@
+/*
+Escreva um programa que calcule o imposto de renda a partir da renda mensal informada pelo usuário. 
+Considere que qualquer valor além da terceira casa decimal pode ser desprezado. 
+As regras são: Renda mensal até R$1164,00: Isento de imposto de renda 
+Renda mensal de R$1164,01 a R$2326,00: 15% de imposto de renda 
+Renda mensal superior a R$ 2326,01: 27,5% de imposto de renda.
+*/
+
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+
+using namespace std;
+
+int
+main ()
+{
+
+  float RendaMensal;
+
+//cout << "Qual a renda mensal?";
+  cin >> RendaMensal;
+  if (RendaMensal <= 1164.00){
+    cout << "R$ " << fixed << setprecision (2) << RendaMensal*00.00 << endl;
+      
+  }if (RendaMensal >= 1164.01 && RendaMensal <= 2326.00 ){
+    cout << "R$ " << fixed << setprecision (2) << RendaMensal*0.15 << endl;
+    
+  } if(RendaMensal >= 2326.01){
+    cout << "R$ " << fixed << setprecision (2) << RendaMensal*0.275 << endl;  
+  } 
+  return 0;
+}
