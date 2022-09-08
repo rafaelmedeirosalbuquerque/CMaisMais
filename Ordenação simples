@@ -1,0 +1,42 @@
+/*
+Leia 3 valores inteiros e ordene-os em ordem decrescente. 
+No final, mostre os valores em ordem decrescente. 
+Lembre-se de usar o “\n” para quebrar linha entre os valores.
+*/
+
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+using namespace std;
+int main(){ 
+
+float A;
+float B;
+float C;
+float temp;
+
+    cin >> A;
+    cin >> B;
+    cin >> C;
+
+    if (B > C){
+        temp = A;
+        A = B;
+        B = temp;
+    }
+
+    if(C > A){
+        temp = A;
+        A = B;
+        C = temp;
+    }
+
+    if(C > B){
+        temp = B;
+        B = C;
+        C = temp;
+    }
+
+    cout << A << "\n" << B << "\n" << C << endl;
+    return 0;
+}
