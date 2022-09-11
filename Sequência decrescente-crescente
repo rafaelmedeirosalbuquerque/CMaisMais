@@ -13,19 +13,23 @@ using namespace std;
 
 int main(){
     
-    int N, /* inteiro positivo dado (a ser lido) */ 
-    Npositivo;
-    cin >> N;
+    int n,         
+        n2=1,
+        soma=0,       
+        soma2=1;
+        
+    cin >> n;           // cout << "Entre com um valor"       
+        n2=n;           //n2 guarda o valor n inserido pelo usuário (pois no primeiro while era se tornará 1)
+        
+    while (n >= 1){     //repete enquanto n for menor igual a 1
+        soma=n;         //soma recebe n (caso o usuário coloque 10, soma vira 10)
+        n--;            //o n é decrescido -1 (10-1=9)
+        cout << soma;   //imprime soma (no exp: 10)
+    }                   //retorna ao inicio como o n agora vale 9 soma recebe 9)
+    while (soma2<n2){   //O comando irá se repetir ate que se chegue no valor que o usuário inseriu
+        soma2++;        //acrescenta +1 ao valor soma, que inicialmente vale 1, pois o 1 sera o último digito do primeiro while
+        cout << soma2;  //imprime soma2
 
-    while (N < 0){
-    if (N>0)
-    N = Npositivo;
-    }
- 
-}
-    cout << N << endl;
-    cout << Npositivo << endl;
+    }                   
     return 0;
 }
-
-
