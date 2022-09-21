@@ -1,36 +1,25 @@
-/*
-Números Primos
-Escreva um programa que lê um valor inteiro >N e imprime uma mensagem indicando se N é primo ou não.
-*/
-
 #include <iostream>
-#include <cmath>
-#include <iomanip>
-#include <cstring>
-#include <cctype>
-#include <stdio.h>
 
 using namespace std;
-int main()
-{
+int main(){
     int n,			    //valor de entrada do usuario
-     d=1,	            //divisor maior que 0
-     contador=0;	    //utilizado para armazenar quantas vezes o numero é dividido por 1 e por ele mesmo
-     
+    d=1,	            //divisor maior que 0
+    contador=0; 	    //utilizado para armazenar quantas vezes o numero é dividido por 1 e por ele mesmo
     cin >> n;           //entrada do valor de n
     
-    while (d<=n) {      //faça enquanto divisor for menor que n
-	if (n % d  == 0){   //se o resto da divisão de n por d for 0, some mais 1 ao contador
-	contador++;         //contador armazena quantas vezes o número teve resto da divisão igual a 0
-}
-    d++;                //acrescenta +1 ao d dentro do while. O loop encerra quando d for igual a n 
-} 
-    if (contador == 2){ //se o contador de n tiver tido resto da divisão igual a 0 duas vezes ele é número primo
-	cout << n << " é primo"<< endl;
-}
-    else{               //caso contrario ele não é número primo
-	cout << n << " não é primo" << endl;
-}
+    while (d<=n) {          //faça enquanto divisor for menor que n
+	    if (n % d  == 0){   //se o resto da divisão de n por d for 0, some mais 1 ao contador
+	        contador++;     //contador armazena quantas vezes o número teve resto da divisão igual a 0
+        }
+    d++;                    //acrescenta +1 ao d dentro do while. O loop encerra quando d for igual a n 
+    } 
+    if (contador == 2){     //se o contador de n tiver tido resto da divisão igual a 0 duas vezes ele é número primo
+	    cout << n << " é primo"<< endl;
+    }
+    else{                   //caso contrario ele não é número primo
+	    cout << n << " não é primo" << endl;
+    }
 
     return 0;
 }
+ 
