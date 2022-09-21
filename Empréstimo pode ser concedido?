@@ -1,4 +1,5 @@
 /*
+Empréstimo pode ser concedido?
 Uma empresa abriu uma linha de crédito para os funcionários. 
 O valor da prestaçãonão pode ultrapassar 30% do salário. 
 Faça um programa que receba o salário, o valordo empréstimo e o número de prestações e informe se o empréstimo pode serconcedido. 
@@ -12,30 +13,21 @@ Nenhum dos valores informados pode ser zero ou negativo.
 //DICA: Observe que a saída de seu programa deve ter cinco casas decimais, para isso, utilize o comando toFixed(), 
 
 #include <iostream>
-#include <cmath>
-#include <iomanip>
 
 using namespace std;
 
 int main(){
 
-float Salario;
-float Emprestimo;
-float Prestacoes;
+float Salario, Emprestimo, Prestacoes;
 
-//    cout << "sextou bb, quanto tu ganha?" << endl;
-    cin >> Salario;
-//    cout << "Fala ai quanto tu quer do agiota?" << endl;
-    cin >> Emprestimo;
-//    cout << "Fala ai quantas vezes eu vou te visitar?" << endl;
-    cin >> Prestacoes;
+cin >> Salario >> Emprestimo >> Prestacoes;
     
     if ((Emprestimo/Prestacoes) <= (0.3 * Salario) || Salario == 0){
     cout << "Emprestimo pode ser concedido" << endl;
-}
+    }
     if ((Emprestimo/Prestacoes) > (0.3 * Salario) && Salario !=0 ){
     cout << "Emprestimo nao pode ser concedido" << endl;
-}
+    }
 
     return 0;
-}
+    }
