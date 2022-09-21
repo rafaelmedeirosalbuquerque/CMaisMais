@@ -42,26 +42,16 @@ Quando terminar de ressolver este problema (ou seja, quando terminar de escrever
 */
 
 #include <iostream>
-#include <cmath>
 #include <iomanip>
-#include <cstring>
-#include <cctype>
 
 using namespace std;
 
 int main(){
-    string Esporte;
+
     int Idade;
-    string Futebol;
-    string Natacao; 
-    string Surf; 
-    string esportLOL;
+    string Futebol, Esporte, Natacao, Surf, esportLOL;
     
-    
-//    cout << "qual esporte você quer participar?" << endl;
-    cin >> Esporte;
-//    cout << "Qual a sua idade?" << endl;
-    cin >> Idade;
+    cin >> Esporte >> Idade;
 
     if(Esporte == "Futebol" && 20 > Idade){
         cout << "Sub-20 - Futebol" << endl;
