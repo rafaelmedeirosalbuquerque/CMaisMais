@@ -1,0 +1,21 @@
+/* Realizando um empréstimo
+Uma empresa abriu uma linha de crédito para os funcionários. 
+Sabendo que o valor da prestação não pode ultrapassar 30% do salário. 
+Faça um programa, que receba na entrada, o salário, o valor do empréstimo e o número de prestações. 
+Por fim, informe se o empréstimo pode  ser concedido.
+*/
+
+#include <iostream>
+using namespace std;
+
+int main(){
+    float salario, emprestimo, numerodeprestacoes, prestacoes;
+    cin >> salario >> emprestimo >> numerodeprestacoes;
+    prestacoes=emprestimo/numerodeprestacoes;
+    
+    if (prestacoes<(salario*0.30)){
+        cout << "Emprestimo pode ser concedido" << endl;}
+  	else{
+        cout << "Emprestimo nao pode ser concedido" << endl;}
+    return 0;
+} 
