@@ -7,27 +7,18 @@ Renda mensal superior a R$ 2326,01: 27,5% de imposto de renda.
 */
 
 #include <iostream>
-#include <cmath>
 #include <iomanip>
 
 using namespace std;
 
-int
-main ()
-{
-
-  float RendaMensal;
-
-//cout << "Qual a renda mensal?";
-  cin >> RendaMensal;
-  if (RendaMensal <= 1164.00){
-    cout << "R$ " << fixed << setprecision (2) << RendaMensal*00.00 << endl;
-      
-  }if (RendaMensal >= 1164.01 && RendaMensal <= 2326.00 ){
-    cout << "R$ " << fixed << setprecision (2) << RendaMensal*0.15 << endl;
-    
-  } if(RendaMensal >= 2326.01){
-    cout << "R$ " << fixed << setprecision (2) << RendaMensal*0.275 << endl;  
-  } 
+int main (){
+    float RendaMensal;
+    cin >> RendaMensal;
+    if (RendaMensal <= 1164.00){
+    cout << "R$ " << fixed << setprecision (2) << RendaMensal*00.00 << endl;}
+    if (RendaMensal >= 1164.01 && RendaMensal <= 2326.00 ){
+    cout << "R$ " << fixed << setprecision (2) << RendaMensal*0.15 << endl;} 
+    if(RendaMensal >= 2326.01){
+    cout << "R$ " << fixed << setprecision (2) << RendaMensal*0.275 << endl;} 
   return 0;
 }
