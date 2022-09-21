@@ -1,0 +1,21 @@
+Escreva um programa que vai receber um número inteiro positivo x de três dígitos. 
+Este programa deve imprimir a mensagem "Digitos pares", caso x seja formado apenas por dígitos pares, ou caso contrário, imprimir a mensagem "Digitos nao pares".
+
+#include <iostream>
+using namespace std;
+
+int main(){
+    int x, cont=0;
+		cin >> x;
+		while (x>0){           	//repetir enquanto x for maior do que 0
+    	if(x%2 != 0){        	//se o resto da divisão por x for diferente de 0 acrescenta 1 ao contador
+        cont++;            	//sempre que o resto da divisão for 0 soma-se +1 no contador
+    	}                    
+        x=x/10;           	//separação de dígito dentro do while, o dígito mais a direito será guardado no loop
+		}   
+    if(cont==0){
+    cout << "Digitos pares";}
+  	else{
+    cout << "Digitos nao pares";}
+  return 0;
+}
