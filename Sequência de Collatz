@@ -1,0 +1,30 @@
+/*
+Segundo a conjectura de Collatz, existe uma sequência que começa em um inteiro positivo n e termina em 1, sendo cada termo desta sequência calculado em função do termo anterior. 
+Isto é feito de acordo com as seguintes regras: se o termo anterior for par, o próximo termo deve ser igual ao termo anterior dividido por 2; 
+se o termo anterior for ímpar, o próximo termo deve ser igual ao termo anterior multiplicado por 3 e somado com 1.  
+Implemente um programa que leia um número inteiro positivo n denotando o primeiro termo e imprima toda a sequência de Collatz em uma mesma linha, separando cada termo por um único espaço em branco.
+*/
+
+#include <iostream>
+
+using namespace std;
+
+int main(){
+int N, N2;
+  cin >> N;
+  N2=N;
+  cout << N << " ";
+  while(N>1){
+     if(N%2==0){
+     					N2 = N/2;
+              N=N2;
+              cout<< N2 << " ";
+} 
+    else{
+  	      N2=N*3+1;
+        	N=N2;
+        	cout << N2 << " ";
+  	}
+  }
+return 0;
+}
