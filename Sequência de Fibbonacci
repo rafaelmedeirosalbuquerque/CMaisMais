@@ -14,26 +14,20 @@ using namespace std;
 
 int main(){
     
-    int n, 
-    temp,
-    ult=1, 
-    penult=0;
-
+    int n, temp, ult=1, penult=0;
     cin >> n;
     
-    if(n>1){                            //usado por que se n=1 não deve imprimir nenhum valor
-    cout << ult << " ";                 //usado para imprimir o primeiro 1 da sequência
+    if(n>1){                                //usado por que se n=1 não deve imprimir nenhum valor
+        cout << ult << " ";                 //usado para imprimir o primeiro 1 da sequência
 
-    while(ult+penult<n){                //laço de repetição, o valor de impressão deve ser menor do que cin >> n
+        while(ult+penult<n){                //laço de repetição, o valor de impressão deve ser menor do que cin >> n
+            cout << (ult+penult) << " ";    //imprimir a soma do ultimo valor e do penultimo
         
-        cout << (ult+penult) << " ";    //imprimir a soma do ultimo valor e do penultimo
-
-        temp = penult;                  //temp guarda o penultimo valor [(2+3=5) no caso o 3]  
-        penult = ult;                   //o penultimo recebe o ultimo   [(2+3=5) no caso o 5]
-        ult = ult + temp;               //ultimo recebe o ultimo + temp [(3+5=8) novo ultimo(8)= ultimo(5) + temp(3), que recebeu o penultimo]
+            temp = penult;                  //temp guarda o penultimo valor [(2+3=5) no caso o 3]  
+            penult = ult;                   //o penultimo recebe o ultimo   [(2+3=5) no caso o 5]
+            ult = ult + temp;               //ultimo recebe o ultimo + temp [(3+5=8) novo ultimo(8)= ultimo(5) + temp(3), que recebeu o penultimo]
+        }
     }
-    }else{}
-    
 
     return 0;
 }
