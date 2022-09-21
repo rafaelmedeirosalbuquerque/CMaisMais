@@ -1,0 +1,33 @@
+/* 
+Escreva um programa que lê dois números inteiros, a e b, e procura no intervalo [a, b] qual é o número x que possui mais divisores. 
+Se dois ou mais números possuem a maior quantidade de divisores, imprima o maior deles.
+Exemplos 1:
+  Entrada: 1 5
+  Saída: 4
+Exemplo 2:
+  Entrada: 12 17
+  Saída: 12
+  */
+  
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+int main(){
+	int a, b, x2=0, x=0, i, j, n;
+    cin >> a >> b;
+  
+   for(i=a; i<=b; i++){         
+        for(j=1; j<i; j++){      
+            if(i%j==0){         
+                x++;}
+    }   
+    if(x>=x2){
+        x2=x;
+        n=i;}
+        x=0;
+    }   
+        cout << n << endl;
+    return 0;
+}
