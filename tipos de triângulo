@@ -1,62 +1,41 @@
 /*
-Leia 3 valores reais A, B e C e ordene-os em ordem decrescente, de modo que o lado A representa o maior dos 3 lados. 
-A seguir, determine o tipo de triângulo que estes três lados formam, com base nos seguintes casos, sempre escrevendo uma mensagem adequada:
-Se A ≥ B+C, apresente a mensagem: NAO FORMA TRIANGULO.
-Se A2 = B2 + C2, apresente a mensagem: TRIANGULO RETANGULO
-Se A2 &gt; B2 + C2, apresente a mensagem: TRIANGULO OBTUSANGULO.
-Se A2 &lt; B2 + C2, apresente a mensagem: TRIANGULO ACUTANGULO.
-Se os três lados forem iguais, apresente a mensagem: TRIANGULO EQUILATERO.
+Escreva um programa para ler na entrada 3 valores reais, A, B e C e os ordene em ordem decrescente, de modo que o lado A, represente o maior dos 3 lados. A seguir, determine o tipo de triângulo que estes três lados formam com base nos seguintes casos:
+Se A ≥ B+C, apresente a mensagem: NAO FORMA TRIANGULO;
+Se A2 = B2 + C2 (Teorema de Pitágoras), apresente a mensagem: TRIANGULO RETANGULO;
+Se os três lados forem iguais, apresente a mensagem: TRIANGULO EQUILATERO;
 Se apenas dois dos lados forem iguais, apresente a mensagem: TRIANGULO ISOSCELES. 
-Lembre-se de quebrar uma linha com “\n” e mostrar a frase em maiúsculas, assim como nos exemplos, caso contrário o sistema irá considerar errada sua resposta.
-*/
+Lembre-se de mostrar a frase em letras maiúsculas, assim como nos exemplos, caso contrário o sistema irá considerar errada sua resposta.*/
 
 #include <iostream>
-#include <cmath>
 #include <iomanip>
+
 using namespace std;
 
 int main(){
-    float  A;
-    float  B;
-    float  C;
-    float temp;
-    
-//    cout << "coeficiente A: ";
-    cin >> A;
-//    cout << "coeficiente B: ";
-    cin >> B;
-//    cout << "coeficiente C: ";
-    cin >> C;
-
-    if(C>A){            //321
+    float  A, B, C, temp;
+    cin >> A >> B >> C;
+//colocar em ordem decrescente:
+    if(C>A){            
         temp = A;
         A = C;
-        C = temp;
-    } 
-    if (C>B){           //312
+        C = temp;} 
+    if (C>B){           
         temp = B;
         B = C;
-        C = temp;
-    }
-    if (B>A){            //132  231
+        C = temp;}
+    if (B>A){            
         temp = B;
         B = A;
-        A = temp;
-    }
-    
-    
-    if(A >= (B + C)){
+        A = temp;}
+//calculo dos triângulos
+  	if(A >= (B + C)){
         cout << "NAO FORMA TRIANGULO"<< endl;
-    }if (A*A < (B*B+C*C)){
-        cout << "TRIANGULO ACUTANGULO" << endl;
-    }if (A == B && B != C || B == C && C != A || C == A && A != B){
-        cout << "TRIANGULO ISOSCELES"<< endl;
-    }if (A != B && B != C && A < (B + C)){
+    }if (A*A == (B*B + C*C)){
         cout << "TRIANGULO RETANGULO" << endl;
-    }if (A > (B + C)){
-        cout << "TRIANGULO OBTUSANGULO" <<endl;
     }if (A == B && B == C){
         cout << "TRIANGULO EQUILATERO" << endl;
+    }if (A == B && B != C || B == C && C != A || C == A && A != B){
+        cout << "TRIANGULO ISOSCELES"<< endl;
     }
     return 0;
 } 
