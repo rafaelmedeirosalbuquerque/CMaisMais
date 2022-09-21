@@ -17,25 +17,13 @@ Atente para os casos de teste para ver a formatação da entrada e saída do pro
 */
 
 #include <iostream>
-#include <cmath>
-#include <iomanip>
-#include <cstring>
-#include <cctype>
 
 using namespace std;
 
 int main(){
-    int dedo1;
-    int dedo2;
-    int dedo3;
-    int dedo4;
-    int SomaDosDedos;
-    char letra;
-    char letraZerou;
-    cin >> dedo1;
-    cin >> dedo2;
-    cin >> dedo3;
-    cin >> dedo4;
+    int dedo1, dedo2, dedo3, dedo4, SomaDosDedos;
+    char letra, letraZerou;
+    cin >> dedo1 >> dedo2 >> dedo3 >> dedo4;
    
     SomaDosDedos = dedo1+dedo2+dedo3+dedo4;
     letra = SomaDosDedos+64;
