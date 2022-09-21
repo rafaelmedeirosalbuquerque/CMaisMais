@@ -9,21 +9,14 @@ Caso seja impossível alcançar seu amigo, retorne a mensagem “impossivel”.
 */
 
 #include <iostream>
-#include <cmath>
-#include <iomanip>
 
 using namespace std;
 
 int main(){
 
-float X;
-float V1;
-float V2;
-float DISTANCIA;
+float X, V1, V2, DISTANCIA;
 
-    cin >> X;
-    cin >> V1;
-    cin >> V2;
+cin >> X >> V1 >> V2;
 
     if(V1<=V2){
     cout << "impossivel" << endl;   
