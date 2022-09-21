@@ -14,22 +14,13 @@ DICA: Observe que a saída de seu programa deve ter cinco casas decimais, para i
 #include <iostream>
 #include <cmath>
 #include <iomanip>
+
 using namespace std;
 
 int main(){
-    float  A;
-    float  B;
-    float  C;
-    float delta;
-    float raiz1;
-    float raiz2;
+        float  A, B, C, delta, raiz1, raiz2;
     
-//    cout << "coeficiente A: ";
-    cin >> A;
-//    cout << "coeficiente B: ";
-    cin >> B;
-//    cout << "coeficiente C: ";
-    cin >> C;
+    cin >> A >> B >> C;
     
     delta = (B*B) - (4*A*C);
     raiz1 = (-B+sqrt(delta))/(2*A);
