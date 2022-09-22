@@ -1,0 +1,27 @@
+/*Soma dos dígitos
+
+Escreva um programa que lê um número inteiro n e imprime a soma dos dígitos desse número.
+*/
+
+#include <iostream>
+
+using namespace std;
+
+int main(){
+    int n, aux, soma=0, digito;
+    cin >> n;
+    aux = 0;
+    
+    for(int i=1; i<n; i++){     //inicia em 1, i deve ser menor do que n, acrescenta +1 ao i
+        while (n > 0){
+            digito = n%10;      /* o digito mais à direita de N é obtido */
+            soma = soma+digito;
+            n=n/10;  /* N passa a ser o N anterior sem o dígito mais à direita */
+        }
+            cout << soma << " é perfeito"; 
+            if (soma == n){      //se aux for igual ao valor o digito é perfeito
+        }   
+    }                       //fim do for
+          
+    return 0;
+}
