@@ -1,0 +1,61 @@
+/*
+Conversão de temperatura (com função)
+
+Implemente uma função para conversão de temperatura entre diferentes escalas. Esta função deve funcionar como segue: ela possui dois parâmetros de entrada, sendo estes uma temperatura e um caractere (C, F ou K) informando qual a sua escala (Celsius, Fahrenheit ou Kelvin, respectivamente). A função deve armazenar em dois parâmetros de saída o resultado da conversão da escala de entrada para as outras duas escalas.
+
+Para isto, siga a convenção:
+- Se a temperatura de entrada for Celsius, o 1o. parâmetro de saída deve armazenar o resultado
+  em Fahrenheit e o 2o. em Kelvin
+- Se a temperatura de entrada for Fahrenheit, o 1o. parâmetro de saída deve armazenar o resultado
+  em Celsius e o 2o. em Kelvin
+- Se a temperatura de entrada for Kelvin, o 1o. parâmetro de saída deve armazenar o resultado
+  em Celsius e o 2o. em Fahrenheit
+
+Implemente também a função main, para ler a temperatura e escala de entrada,
+chamar a função e exibir a conversão no formato indicado nos exemplos.
+
+A conversão entre as escalas pode ser feita com as seguintes equações:
+
+K = C + 273.15
+
+F = C * 1.8 + 32
+*/
+
+#include <cmath>
+#include <iostream>
+#include <iomanip>
+#include <string>
+
+using namespace std;
+void temp(double &temperatura, double &CFa, double &CKe, double &FCe, double &FKe, double &KCe, double &KFa);
+
+int main(){
+    double temperatura, Ce, Fa, Ke, CKe, CFa, FCe, FKe, KCe, KFa;
+    char escala;
+    cin >> temperatura >> escala;
+    
+    temp(temperatura, CKe, CFa, FCe, FKe, KCe, KFa); 
+    
+    if(escala == 'C'){
+        cout << fixed << setprecision(2) << "T2: " << CFa << endl;
+        cout << fixed << setprecision(2) << "T3: " << CKe << endl;
+    }
+    else if(escala == 'F'){
+        cout << fixed << setprecision(2) << "T2: " << FCe << endl;
+        cout << fixed << setprecision(2) << "T3: " << FKe << endl;
+    }
+    else if(escala == 'K'){
+        cout << fixed << setprecision(2) << "T2: " << KCe << endl;
+        cout << fixed << setprecision(2) << "T3: " << KFa << endl;
+    }
+return 0;
+}
+
+void temp(double &temperatura, double &CFa, double &CKe, double &FCe, double &FKe, double &KCe, double &KFa){ 
+        CFa = (temperatura + 273.15);
+        CKe = (temperatura * 1.8 + 32);
+        FCe = ((temperatura-32)/1.8);
+        FKe = (FCe + 273.15);
+        KCe = (temperatura - 273.15);
+        KFa = (KCe * 1.8 + 32);
+}
