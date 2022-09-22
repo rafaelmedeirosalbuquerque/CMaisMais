@@ -1,0 +1,34 @@
+/*
+Função Divisão
+
+Escreva um programa que lê dois números, x e y, e calcula o resultado do quociente e do restoda divisão de x por y.
+Para isso, você deve implementar uma função divisao que possui quatro parâmetros. 
+Dois parâmetros, x e y, por valor, e dois parâmetros, q e r , por referência. 
+Os parâmetro q e r devem serusados para retornar, respectivamente, o resultado do quociente e do resto da divisão de x por y.
+*/
+
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+void resto(int &x, int &y, int &valorresto);
+void quociente(int &x, int &y, int &valorquociente);
+
+int main(){
+    int x, y, valorquociente, valorresto;
+    cin >> x >> y;
+    
+    quociente(x, y, valorquociente); 
+    resto(x, y, valorresto);
+    
+    cout << "Quociente = " << valorquociente << ", Resto = " << valorresto;
+     
+    return 0;
+}
+void quociente(int &x, int &y, int &valorquociente){
+    valorquociente = x/y;
+}
+void resto(int &x, int &y, int &valorresto){
+    valorresto = x%y;
+}
