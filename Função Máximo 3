@@ -1,0 +1,30 @@
+/*
+Função Máximo3
+Escreva uma função maximo que recebe três valores inteiros e retorna o maior valor dos três.
+*/
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int maior(int a, int b, int c);
+int main(){
+	int a, b, c;
+    cin >> a >> b >> c;
+    cout << "Maior = " << maior(a, b, c) <<endl;
+    
+    return 0;
+}
+int maior(int a, int b, int c){
+    int resultado;
+        if(a>=b && a>=c){
+            resultado = a;
+        }
+        else if(b>=a && b>=c){
+            resultado = b;
+        }
+        else if(c>=a && c>=b){
+            resultado = c;
+        }
+    return resultado;
+}
