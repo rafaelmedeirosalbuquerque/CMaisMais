@@ -1,0 +1,28 @@
+/*
+Função Hora, minuto, segundo
+
+Escreva uma função calcHora, que recebe 3 parâmetros por referência. 
+A função receberá no primeiro valor uma quantidade de tempo Texpressa em segundos e deve retornar usando os seus três parâmetrosa quantidade equivalente de tempo em horas, minutos e segundos.
+*/
+
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+void calchora(int &h, int &m, int &s);
+
+int main(){
+    int h, m, s;
+    cin >> s;
+    calchora(h, m, s);
+    cout << h << "h:" << m << "m:" << s << "s";
+    
+    return 0;
+}
+
+void calchora(int &h, int &m, int &s){
+    h = (s/3600);
+    m = (s%3600/60);
+    s = (s%3600%60);
+}
