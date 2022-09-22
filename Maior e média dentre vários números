@@ -1,0 +1,32 @@
+/*
+Maior e média dentre vários números
+
+Implemente um programa que receba uma quantidade indeterminada de números inteiros.
+O programa deve parar quando for digitado o número 0, que não deve ser considerado
+como entrada. O programa deve imprimir o maior e a média de todos os números inseridos,
+sendo este último com uma casa decimal. Assuma que será inserido pelo menos um número além do 0.
+*/
+
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+int main(){
+    int nota, maiornota=-10000000000000000;
+    float cont=-1, media=0, somadasnotas=0;
+    
+    while(nota!=0){
+        cin >> nota;
+        cont++;
+        somadasnotas = somadasnotas+nota;
+        if(nota>=maiornota && nota!=0){
+            maiornota=nota;
+        }
+    }   
+    media = somadasnotas/cont;
+        cout << "Maior: " << maiornota <<  endl;
+        cout << fixed << setprecision (1) << "Media: " << media << endl;
+    return 0;
+}
+
