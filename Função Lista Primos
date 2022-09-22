@@ -1,0 +1,48 @@
+/*
+Função Lista Primos
+
+Escreva uma função listaPrimos que recebe dois valores inteiros, x e y, e imprime todos os números números primos no intervalo [x, y].
+Escreva também uma função auxiliar ehPrimo, que recebe um inteiro n e retorna verdadeiro se n é primo e falso caso contrário. 
+Dica: o tipo de retorno da função listaPrimos deve ser void.
+*/
+
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+int FUNCAOPRIMO(int x, int y);
+
+int main(){
+    int x, y;
+    
+    cin >> x >> y; 
+    
+    FUNCAOPRIMO(x, y);
+    
+    return 0;
+}
+    
+int FUNCAOPRIMO(int x, int y){
+
+    
+    int i, j, d, VALOR, cont=0;
+    
+
+    
+    for(i=x; i<=y; i++){
+        for(d=1; d<=i; d++){
+	        if(i % d == 0){ 
+	        cont++;
+            }
+        }   
+            if(cont==2){
+                VALOR=i;
+         cout << VALOR << " ";   
+            }
+                cont=0;
+           
+    }
+
+    return VALOR;
+}
