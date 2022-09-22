@@ -1,0 +1,40 @@
+/*
+Implemente uma função utilizando passagem por referência que possua como parâmetros de entrada, dois números inteiros x e y. A função a ser implementada deve armazenar no primeiro parâmetro de saída o resultado de 
+ x², e no segundo parâmetro o resultado da multiplicação entre x e y. 
+- Não utilize a função pow para calcular a potência;
+- A função main deve ler do usuário dois valores e imprimir (2 casas decimais) na tela os resultados computados pela função implementada após a sua chamada;
+*/
+
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+
+using namespace std;
+void potencia 		(double &A, double &B, double &resultado1);
+void multiplicacao(double &A, double &B, double &resultado2);
+
+int main(){
+    double A, B, resultado2, resultado1;
+    
+    cin >> A >> B;
+		potencia (A, B, resultado1);
+  	multiplicacao(A, B, resultado2);
+  
+    cout << "Resultado 1: " << fixed << setprecision(2) << resultado1;
+    cout << fixed << setprecision(2) << "\n" << "Resultado 2: " << resultado2; 
+
+return 0;
+}
+void potencia(double &A, double &B, double &resultado1){
+    int cont=0, pot=1;
+  
+    while(cont<B){
+        pot=pot*A;    
+        cont++;
+}		resultado1=pot;
+		}
+
+void multiplicacao(double &A, double &B, double &resultado2){
+
+    resultado2 = A*B;
+}
