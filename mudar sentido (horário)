@@ -1,0 +1,33 @@
+?* 
+Escreva uma função que recebe por referência quatro variáveis: a, b, c, d.  Sua função deve realizar de formar circular (sentido anti-horário) à troca dos valores das variáveis de acordo com a figura a seguir:
+imagem
+Obs: 
+- Apenas uma variável temporária deve ser criada para auxiliar na troca circular;
+- A função principal deve imprimir os valores na tela depois da troca.
+*/
+
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+void circuloantihorario(int &n1, int &n2, int &n3, int &n4);
+
+int main(){
+int a, b, c, d;
+
+cin >> a >> b >> c >> d;
+circuloantihorario (a,b,c,d);
+cout << "a="<< a << ", " << "b=" << b << ", " << "c=" << c << ", " << "d=" << d << endl;
+return 0;
+}
+
+void circuloantihorario(int &n1, int &n2, int &n3, int &n4){
+
+int temp;
+
+temp = n1;
+n1 = n2;
+n2 = n3;
+n3 = n4;
+n4 = temp;
+}
