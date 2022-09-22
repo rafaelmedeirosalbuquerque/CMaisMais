@@ -1,0 +1,31 @@
+/*
+Função Soma Intervalo
+
+Escreva uma função que recebe dois valores inteiros, x e y, e retorna a soma dos números no intervalo [x, y].
+*/
+
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+int maior(int x, int y);
+
+int main()
+{
+	int x, y;
+   
+    cin >> x >> y;
+    
+    cout << maior(x, y) <<endl;
+    
+    
+    return 0;
+}
+int maior(int x, int y){
+    int i, resultado=0;
+    for(i=x; i<=y; i++){
+      resultado = resultado+i;
+    }
+    return resultado;
+}
+
