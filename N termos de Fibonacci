@@ -1,0 +1,33 @@
+/*
+N termos de Fibonacci
+Implemente um programa que recebe um número positivo N e escreve na saída os N primeiros termos da sequência de fibonacci. 
+A sequência de Fibonacci tem seus dois primeiros termos iguais a 1. 
+A partir do terceiro, cada termo é igual a soma dos dois termos anteriores a ele. 
+Ou seja: o quinto termo é igual a soma do quarto e terceiro termos. 
+Os 10 primeiros termos da sequência de Fibonacci são: 1 1 2 3 5 8 13 21 34 55Nota: O espaço no final da saída é opcional.
+*/
+
+#include <iostream>
+using namespace std;
+
+int main(){
+    
+    int n, temp, ult=1, penult=0, cont=1;
+    cin >> n;
+    if(n==1){
+        cout << 1;
+    }
+    if(n>1){                            //usado por que se n=1 não deve imprimir nenhum valor
+        cout << ult << " ";                 //usado para imprimir o primeiro 1 da sequência
+        while(cont<n){                      //laço de repetição, o valor de impressão deve ser menor do que cin >> n
+            cout << (ult+penult) << " ";    //imprimir a soma do ultimo valor e do penultimo
+        cont++;
+            temp = penult;                  //temp guarda o penultimo valor [(2+3=5) no caso o 3]  
+            penult = ult;                   //o penultimo recebe o ultimo   [(2+3=5) no caso o 5]
+            ult = ult + temp;               //ultimo recebe o ultimo + temp [(3+5=8) novo ultimo(8)= ultimo(5) + temp(3), que recebeu o penultimo]
+            
+}
+    }
+
+    return 0;
+}
