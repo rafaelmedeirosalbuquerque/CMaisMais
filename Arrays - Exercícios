@@ -1,0 +1,29 @@
+/*
+Arrays - Exercício
+Escreva um programa que armazena 
+inicialmente 5 elementos. Depois, verifica o 
+maior valor entre estes elementos, e imprime 
+o resultado na tela
+*/
+
+#include <iostream>
+
+using namespace std;
+
+int main(){   
+    int id, maior=0, maior0=0 , resultado=0, dados[4]; 
+    for (id = 0; id < 4; id ++){
+        cout << "valor: ";
+        cin >> dados[id];
+    }
+    for (id = 0; id <= 3; id ++) {
+        maior = dados[id];
+        
+        if(maior>=resultado){
+        resultado = maior;
+        }
+        maior = 0;
+    }
+            cout << resultado << " ";
+    return 0;
+}
