@@ -1,0 +1,24 @@
+/*
+Implemente um programa que leia inicialmente duas strings: s1 e s2,  sem espaços em branco. 
+O programa deve imprimir a mensagem "É substring" se s2 for uma substring de s1 e "Não é substring" caso contrário. 
+Uma string é substring de uma outra sempre que todos os seus caracteres ocorrem na mesma ordem e consecutivamente na outra string. 
+As strings a serem testadas possuem no máximo 49 caracteres.
+*/
+
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+int main(){
+	char s1[100], s2[100];
+
+	cin >> s1;
+	cin >> s2;
+
+	if(strstr(s1, s2))
+		cout << "É substring" << endl;
+	else
+		cout << "Não é substring" << endl;
+	return 0;
+}
