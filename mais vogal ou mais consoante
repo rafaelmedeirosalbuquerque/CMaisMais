@@ -1,0 +1,33 @@
+/* Escreve um programa que deve fazer a leitura de uma string (apenas letras minúsculas) com tamanho máximo de 30 caracteres e sem espaços. 
+Informar se esta string possui mais vogais, consoantes ou o mesmo número de vogais e consoantes em sua composição. 
+*/
+
+#include <iostream>
+#include <cstring>
+#define MAXPALAVRA 30
+using namespace std;
+
+int main(){
+    int contVOGAL=0, contCONSOANTE=0;
+    char palavra[MAXPALAVRA];
+    cin.getline(palavra,MAXPALAVRA);
+    
+    for(int i=0;i<strlen(palavra);i++){
+        if(palavra[i]=='a' || palavra[i]=='e' || palavra[i]=='i' || palavra[i]=='o' || palavra[i]=='u'){ 
+        contVOGAL++;
+    }
+        else{
+        contCONSOANTE++;
+        }
+    }
+    if(contVOGAL==contCONSOANTE){ 
+    cout << "Possui o mesmo número";
+    }
+    else if (contVOGAL > contCONSOANTE){
+    cout << "Possui mais vogais";
+    }
+    else{ 
+    cout << "Possui mais consoantes";
+    }
+return 0;
+}
