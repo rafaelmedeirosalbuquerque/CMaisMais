@@ -1,0 +1,30 @@
+/*
+Escreva um programa que faça a leitura de uma string com no máximo 49 caracteres. Depois, faça a leitura de um caractere que será utilizado como chave de busca. 
+Por fim, deve-se pesquisar o número de ocorrências deste caractere na referida string, informando o resultado na saída do programa. 
+*/
+
+#include <iostream>
+#include <cstring>
+#define MAX 50
+using namespace std;
+
+int main(){
+
+int cont=0;
+char frase[MAX], key;
+
+cin.getline(frase,MAX);
+cin >> key;
+
+	for(int i=0;i<strlen(frase);i++){
+        if(frase[i]==key) 
+        cont++;
+	}
+    if(cont > 0){ 
+        cout << "Possui " << cont << " ocorrências para " << key << endl;
+    }
+    else{
+        cout << "Sem ocorrências para " << key << endl;
+    }
+return 0;
+}
