@@ -1,0 +1,39 @@
+/*
+Implemente um programa que deve ler na entrada duas (strings), com tamanho máximo de 20 caracteres. 
+O objetivo é criar uma nova string que seja o resultado da concatenação das duas entradas. 
+Isto sem utilizar a biblioteca <cstring>. Por fim,  imprimir na saída o resultado após a concatenação. Obs: Não deixe de "fechar" a string resultante com o '\0'.
+*/
+
+#include <iostream>
+#define MAX_menor 20
+#define MAX_maior 41
+
+using namespace std;
+
+int main() {
+    char string1[MAX_menor];
+	char string2[MAX_menor];
+	char string3[MAX_maior]="";
+	
+	cin.getline(string1,MAX_menor);
+	cin.getline(string2,MAX_menor);
+  
+  //guardando primeira string
+    int i=0;
+    while(string1[i]!='\0'){
+  	    string3[i] = string1[i];
+        i++;
+	}
+  //guardando segunda string
+    int j=0;
+    while(string2[j]!='\0'){
+        string3[i] = string2[j];
+        i++;
+        j++;
+	}
+  
+  string3[i]='\0';
+  cout << string3 << endl;
+
+  return 0;
+}
