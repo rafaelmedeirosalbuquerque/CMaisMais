@@ -1,0 +1,35 @@
+/*
+Escreva um programa que recebe um número inteiro = 30 e em seguida lê os elementos de um vetor.
+O seu programa deve imprimir o menor valor.
+
+*/
+
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+int main(){
+    int n=31, vet[n], valor, menorvalor=0, cont=0;
+    
+    while(n>=30){
+    cin >> n;
+    }
+
+    for(int i=0; i<n; i++){
+        cin >> valor;
+        vet[i]=valor;
+        }
+    
+    menorvalor = vet[0];
+     for(int i=0; i<n; i++){
+    if(menorvalor>=vet[i]){
+        menorvalor = vet[i];
+    }
+    }
+    cout << menorvalor << endl;
+//    if(menorvalor < vet[i]){
+  //      cont++;}
+    //    menorvalor = 0;
+        
+    return 0;
+}
