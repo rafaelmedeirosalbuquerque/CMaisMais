@@ -1,0 +1,74 @@
+/*
+Bairros e cidades
+﻿
+Defina um tipo estruturado para representar um bairro. Esse tipo estruturado deve armazenar o nome de um bairro e o nome da cidade  onde fica o bairro..
+﻿
+Em seguida, implemente uma função que deve ler do usuário o nome e a cidade de N bairros, armazenando estas informações em um vetor. Os nomes de uma cidade/bairro podem conter espaços. Assuma que o nome de cada cidade/bairro será fornecido em uma linha separada.
+﻿
+Por fim, implemente uma segunda função que recebe como parâmetro um vetor de N bairros e imprime os nome dos bairros que fazem parte de uma mesma cidade, sem repetições. Utilize o formato
+﻿
+"<bairro1> e <bairro2> sao de <cidade>", onde <bairro1> é o nome do primeiro bairro, <bairro2> do segundo e <cidade> é o nome da cidade à qual eles pertencem. Qualquer ordem de impressão é válida, desde que sejam listados todos os pares de bairros que são da mesma cidade, sem repetições.
+﻿
+A função main deve ler um número N de bairros e chamar as funções solicitadas para exibir o resultado do programa. Serão dados no máximo 15 bairros a serem lidos. Os nomes dos bairros e das cidades possuem tamanho máximo igual a 30.
+﻿
+Exemplo de Entrada:
+4
+Jardim das Serpentes
+Rio Pequeno
+Sao Cristovao
+Rio Pequeno
+Penhasco
+Barra Grande
+Ita
+Barra Grande
+﻿
+No exemplo acima, temos os quatro bairros seguintes:
+"Jardim das Serpentes", da cidade "Rio Pequeno"
+"Sao Cristovao", da cidade "Rio Pequeno"
+"Penhasco" da cidade "Barra Grande"
+"Ita", da cidade "Barra Grande"
+Para a entrada anteior, o programa deve imprimir a seguinda saída:
+Jardim das Serpentes e Sao Cristovao sao de Rio Pequeno
+Penhasco e Ita sao de Barra Grande
+*/
+
+#include <iostream>
+#include <cstring>
+#define MAX 50
+using namespace std;
+
+struct cadastro{
+	char bairro[MAX];
+  char cidade[MAX];
+};
+
+void cadastros(cadastro a[MAX], int tam){
+  for(int i=0; i<=tam ;i++){
+    cin.getline(a[i-1].bairro, MAX);
+    cin.getline(a[i].cidade, MAX);
+  }
+}
+
+void imprimir(cadastro a[MAX], int tam){
+  for(int i=0; i<tam; i++){
+    for(int j=i+1; j<tam; j++){
+      if(strstr(a[i].bairro, a[j].bairro)){
+      	cout << a[i].cidade << " e " << a[j].cidade << " sao de " << a[i].bairro << endl;
+//        cout << i << " " << a[i].cidade << " " << j << " " << a[j].cidade << endl;
+       // cout << i << " " << a[i].cidade << " " << i << " " << a[i].bairro << endl;
+        //cout << j << " " << a[j].cidade << " " << j << " " << a[j].bairro << endl;
+     
+      //cout << "i: " << a[i].cidade << "  " << i << " -- j: " << a[j].cidade << " " << j << endl; 
+   	}
+      }
+  }
+}
+
+int main(){
+  int tam;
+  cin >> tam;
+  cadastro a[tam];
+  cadastros(a, tam);
+  imprimir(a, tam);
+  return 0;
+}
