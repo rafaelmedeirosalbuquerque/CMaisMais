@@ -1,0 +1,56 @@
+/*
+(Ordenação-StringVogais) Escreva um programa cujo objetivo seja a ordenação de uma string (cadeia de caracteres, N < 20) formada por vogais apenas minúsculas. 
+Utilize o método de ordenação que julgar adequado e imprima na saída, separada por espaços, a cadeia de caracteres em ordem crescente. 
+É obrigatório a implementação de suas funções para resolver este problema, aproveite e utilize a solução inicial abaixo como referência. 
+Caso precise, veja a tabela ASCII em https://www.asciitable.com .
+*/
+
+#include <iostream>
+#define MAX 20
+using namespace std;
+void leitura(char vet[], int tam, char valor);
+void troca(char vet[], int i, int j);
+void bubble(char vet[], int tam);
+void print(char vet[], int tam);
+
+int main(){
+    char vet[MAX], valor=0;
+    int tam=MAX;
+    
+    leitura(vet, tam, valor);
+    bubble(vet, tam);
+    print(vet, tam);
+    
+    return 0;
+}
+
+void leitura(char vet[], int tam, char valor){
+        for(int i=0; i<tam; i++){
+        cin >> valor;
+        vet[i] = valor;
+        valor=0;
+    }
+}
+
+void troca(char vet[], int i, int j){
+    char temp   = vet[i];
+    vet[i]       = vet[j];
+    vet[j]       = temp;
+}
+
+void bubble(char vet[], int tam){
+    for(int i=0; i<tam; i++){
+        for(int j=0; j<tam-1-i; j++){
+            if(vet[j] > vet[j+1]) 
+                troca(vet,j,j+1);
+        }
+    }
+}
+void print(char vet[], int tam){
+        
+        for(int i=0; i<tam; i++){
+          	if(vet[i]!=0)
+                cout << vet[i] << " ";
+        }
+    cout << endl;
+}
