@@ -1,0 +1,47 @@
+/*
+(Vacinação Struct) Um sistema de vacinação possui (N<=100) vagas para vacinação durante o dia. 
+Escreva um programa que cadastre em um vetor, N pessoas que serão vacinadas, isto deve ser feito utilizando structs. 
+No cadastro, serão necessários apenas o campos Nome e Idade. 
+Depois, imprima na saída o primeiro nome a ser vacinado considerando o de maior idade. Utilize funções para solução do problema.
+*/
+
+#include <iostream>
+#define MAX 50
+using namespace std;
+
+struct cadastro{
+    char nome[MAX];
+   	int idade;
+};
+
+void cadastros(cadastro s[], int tam){
+    for(int i=0; i<tam ;i++){
+      	cin.ignore();
+        cin.getline (s[i].nome, MAX);
+        cin >> s[i].idade;
+    }
+}
+
+void print(cadastro s[], int tam){
+    int maisvelho = s[0].idade;
+    for(int i=1; i<tam; i++){
+        if(s[i].idade > maisvelho){
+            maisvelho = s[i].idade;
+        }
+    }
+    for(int i=0; i<tam; i++){
+        if(s[i].idade == maisvelho){
+            cout << s[i].nome;
+        }
+    }    
+}
+int main(){
+    int tam=100;
+  	cin >> tam;
+    cadastro s[tam];
+    
+    cadastros(s, tam);
+    print(s, tam);
+    
+    return 0;
+}
