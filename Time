@@ -1,0 +1,50 @@
+/*
+Você deve escrever um programa que indica o time com a maior pontuação em um campeonato, que tem até 10 times.
+Para isso, defina um tipo estruturado para armazenar as seguintes informações:
+- Nome do time (sem espaços);
+- Pontuação.
+O seu programa deve ter uma função que recebe um vetor do tipo estruturado que você definiu e a quantidade de elementos do vetor. 
+Essa função deve retornar o índice do elemento do vetor que tem a maior pontuação. 
+O programa principal deve imprimir os dados referentes a esse registro.
+*/
+
+#include <iostream>
+#define MAX 50
+using namespace std;
+
+struct cadastro{
+    char nome[MAX];
+   	int idade;
+};
+
+void cadastros(cadastro s[], int tam){
+    for(int i=0; i<tam ;i++){
+      	cin.ignore();
+        cin.getline (s[i].nome, MAX);
+        cin >> s[i].idade;
+    }
+}
+
+void print(cadastro s[], int tam){
+    int maisvelho = s[0].idade;
+    for(int i=1; i<tam; i++){
+        if(s[i].idade > maisvelho){
+            maisvelho = s[i].idade;
+        }
+    }
+    for(int i=0; i<tam; i++){
+        if(s[i].idade == maisvelho){
+            cout << s[i].nome << ", " << s[i].idade << " ponto(s)";
+        }
+    }    
+}
+int main(){
+    int tam=100;
+  	cin >> tam;
+    cadastro s[tam];
+    
+    cadastros(s, tam);
+    print(s, tam);
+    
+    return 0;
+}
