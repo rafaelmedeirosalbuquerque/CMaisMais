@@ -1,0 +1,50 @@
+/*
+(Ordenação-Vendas) Escreva um programa que deve receber na entrada um vetor (N=7) de valores ofertados para compra de um determinado produto. 
+Seu objetivo é ordenar de forma crescente este vetor, utilizando o método da bolha (Implemente o Bubble Sort). 
+Por fim, exiba o vetor ordenado e a diferença entre os valores máximo e mínimo, armazenados na última e primeira posição do vetor. 
+*/
+
+#include <iostream>
+#define MAX 7
+using namespace std;
+void troca(float vet[], int i, int j);
+void bubble(float vet[], int tam);
+void print(float vet[], int tam);
+
+int main(){
+    float vet[MAX];
+    float valor=0;
+    int tam=MAX;
+   
+    for(int i=0; i<tam; i++){
+        cin >> valor;
+        vet[i] = valor;
+    }
+
+    bubble(vet, tam);
+    print(vet, tam);
+    
+    return 0;
+}
+
+void troca(float vet[], int i, int j){
+    float temp   = vet[i];
+    vet[i]       = vet[j];
+    vet[j]       = temp;
+}
+
+void bubble(float vet[], int tam){
+    for(int i=0; i<tam; i++){
+        for(int j=0; j<tam-1-i; j++){
+            if(vet[j] > vet[j+1]) 
+                troca(vet,j,j+1);
+        }
+    }
+}
+void print(float vet[], int tam){
+        
+        for(int i=0; i<tam; i++){
+                cout << vet[i] << " ";
+        }
+    cout << "(" << vet[tam-1]-vet[0] << ")" << endl;
+}
