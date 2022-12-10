@@ -1,0 +1,61 @@
+*/
+(Ordenação-crescente_decrescente) Escreva um programa para ordenar uma série de valores inteiros recebidos na entrada (N < 15). 
+Seu programa além de ordenar, deve receber a informação se será em ordem crescente "c" ou decrescente "d". 
+Utilize o método de ordenação que julgar adequado e imprima na saída o resultado desta ordenação. 
+Utilize funções para solução do problema, a main() deve realizar apenas a leitura dos dados e a chamada das funções. 
+Obs: A entrada de dados deve acontecer até que seja recebido o dígito 0. 
+*/
+
+#include <iostream>
+#define MAX 15
+using namespace std;
+void troca(int vet[], int i, int j);
+void bubble(int vet[], int tam);
+void print(int vet[], int tam, char CD);
+
+int main(){
+    int vet[15], valor=1, tam=-1;
+    char CD;
+    
+    cin >> CD;
+    for(int i=0; i<MAX && valor!=0; i++){
+        cin >> valor;
+        vet[i]=valor;
+        tam++;
+    }
+    
+    bubble(vet, tam);
+    print(vet, tam, CD);
+    
+    return 0;
+}
+
+void troca(int vet[], int i, int j){
+    int temp   = vet[i];
+    vet[i]     = vet[j];
+    vet[j]     =  temp;
+
+    
+}
+
+void bubble(int vet[], int tam){
+    for(int i=0; i<tam; i++){
+        for(int j=0; j<tam-1-i; j++){
+            if(vet[j] > vet[j+1]) 
+                troca(vet,j,j+1);
+        }
+    }
+}
+void print(int vet[], int tam, char CD){
+    if(CD =='c'){
+        for(int i=0; i<tam; i++){
+            cout << vet[i] << " ";
+        }
+    }
+    if(CD =='d'){
+        for(int i=tam; i>0; i--){
+            cout << vet[i-1] << " ";
+        }
+    }
+    cout << endl;
+}
