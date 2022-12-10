@@ -1,0 +1,49 @@
+/*(Atletas) - Depois dos jogos olímpicos de 2021, cada país resolveu premiar seus medalhistas de ouro em certa modalidade, na qual foram enviados apenas três atletas. 
+Construa um programa C++ que armazene as informações desses atletas e verifique se foram medalhistas de ouro obedecendo o seguinte cadastro:
+- Nome;
+- Modalidade;
+- Medalhista (tipo bool).
+A saída deve informar apenas o nome dos atletas que foram medalha de outro e caso não existam medalhistas, informar  "Sem medalhistas de ouro".
+*/
+
+#include <iostream>
+#define MAX 50
+using namespace std;
+
+struct atleta{
+    char atleta[MAX];
+  	char modalidade[MAX];
+  	int medalha;
+  	
+};
+
+void cadastroatletas(atleta s[], int tam){
+    for(int i=0; i<tam; i++){
+        cin >> s[i].atleta;
+      	cin >> s[i].modalidade;
+      	cin >> s[i].medalha;
+    }
+}
+
+void printatletas(atleta s[], int tam){
+  	int campeao=0;
+    for(int i=0; i<tam; i++){
+      	if(s[i].medalha>0){
+        	cout << s[i].atleta << " ";
+          campeao=1;
+        } 
+    }
+  	if(campeao==0){
+    	cout << "Sem medalhistas de ouro" << endl;
+    }
+  
+}
+int main(){
+  int tam=3;
+    atleta s[tam];
+    
+    cadastroatletas(s, tam);
+    printatletas(s, tam);
+    
+    return 0;
+}
