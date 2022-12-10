@@ -1,0 +1,54 @@
+/*
+(Empresa) - Defina um tipo estruturado que sirva para representar o cadastro dos funcionários de uma determinada empresa, considerando os seguintes dados:
+- Nome;
+- ID;
+- Ano de nascimento;
+- Função.
+Depois, escreva um programa no qual o usuário deve cadastrar para teste do sistema, apenas dois funcionários. 
+Seu programa deve identificar e imprimir o Nome e a Função do Funcionário mais novo cadastrado. 
+No caso dos funcionários possuírem a mesma idade, imprima o nome e função de ambos.  
+*/
+
+#include <iostream>
+#define MAX 50
+using namespace std;
+
+struct funcionario{
+    char nome[MAX];
+    int ID;
+    int anodenascimento;
+    char funcao[MAX];
+};
+
+void cadastroFuncionarios(funcionario s[], int tam){
+    for(int i=0; i<tam; i++){
+        cin >> s[i].nome;
+        cin >> s[i].ID;
+        cin >> s[i].anodenascimento;
+        cin >> s[i].funcao;
+    }
+}
+
+void printFuncionarios(funcionario s[], int tam){
+    int maisjovem=0;
+    maisjovem = s[0].anodenascimento;
+    for(int i=1; i<tam; i++){
+        if(s[i].anodenascimento > maisjovem){
+            maisjovem=s[i].anodenascimento;
+        }
+    }
+    for(int i=0; i<tam; i++){
+        if(s[i].anodenascimento == maisjovem){
+            cout << s[i].nome << " " << s[i].funcao << " ";
+        }
+    }    
+}
+int main(){
+    int tam=2;
+    funcionario s[tam];
+    
+    cadastroFuncionarios(s, tam);
+    printFuncionarios(s, tam);
+    
+    return 0;
+}
